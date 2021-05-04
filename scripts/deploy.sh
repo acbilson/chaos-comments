@@ -17,12 +17,8 @@ uat)
       -e "EMOJI=true" \
       -e "STORE_BOLT_PATH=/mnt/var/db" \
       -e "SECRET=${UAT_REMARK42_SECRET}" \
-      -e "AUTH_GITHUB_CID=${GITHUB_CLIENT_ID}" \
-      -e "AUTH_GITHUB_CSEC=${GITHUB_CLIENT_SECRET}" \
-      -e "AUTH_FACEBOOK_CID=${FACEBOOK_CLIENT_ID}" \
-      -e "AUTH_FACEBOOK_CSEC=${FACEBOOK_CLIENT_SECRET}" \
-      -e "AUTH_GOOGLE_CID=${GOOGLE_CLIENT_ID}" \
-      -e "AUTH_GOOGLE_CSEC=${GOOGLE_CLIENT_SECRET}" \
+      -e "AUTH_GITHUB_CID=${UAT_GITHUB_CLIENT_ID}" \
+      -e "AUTH_GITHUB_CSEC=${UAT_GITHUB_CLIENT_SECRET}" \
       -v ${UAT_DB_PATH}:/mnt/var/db \
       --name comments-uat \
       acbilson/comments-uat:alpine-3.12
