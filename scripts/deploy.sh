@@ -31,7 +31,7 @@ uat)
 prod)
   echo "enabling micropub service..."
   ssh -t ${PROD_HOST} sudo systemctl daemon-reload
-  ssh -t ${PROD_HOST} sudo systemctl enable --now container-webhook.service
+  ssh -t ${PROD_HOST} sudo systemctl enable --now container-comments.service
 ;;
 
 *)

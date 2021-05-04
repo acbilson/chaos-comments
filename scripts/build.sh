@@ -26,12 +26,8 @@ uat)
 
 prod)
   echo "creates files from template..."
-  mkdir -p dist/dist && \
-    envsubst < template/hooks-prod.json > dist/dist/hooks.json && \
-    envsubst < template/config-prod.toml > dist/dist/config-prod.toml && \
-    envsubst < template/config-uat.toml > dist/dist/config-uat.toml && \
-    cp template/build-site.sh dist/dist/build-site.sh && \
-    envsubst < template/container-webhook.service > dist/container-webhook.service
+  mkdir -p dist && \
+    envsubst < template/container-comments.service > dist/container-comments.service
 
   echo "copies files to distribute..."
   cp Dockerfile dist/
@@ -44,7 +40,7 @@ prod)
     sudo podman build \
       -f /mnt/msata/build/prod/Dockerfile \
       --target=prod \
-      -t acbilson/webhook:alpine-3.12 \
+      -t acbilson/comments:alpine-3.12 \
       /mnt/msata/build/prod
 ;;
 

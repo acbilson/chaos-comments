@@ -14,3 +14,6 @@ FROM alpine:3.12 as uat
 COPY --from=uat-build /src/boltbrowser.linuxarm /usr/local/bin/boltbrowser
 COPY --from=uat-build /src/remark42.linux-arm /usr/local/bin/remark42
 ENTRYPOINT ["remark42", "server"]
+
+FROM uat as prod
+ENTRYPOINT ["remark42", "server"]
