@@ -13,8 +13,7 @@ uat)
 
 prod)
   echo "stops container in production..."
-  ssh -t ${PROD_HOST} sudo systemctl disable comments
-  ssh -t ${PROD_HOST} sudo podman stop comments
+  ssh -t ${PROD_HOST} sudo systemctl disable container-comments
 ;;
 
 *)
